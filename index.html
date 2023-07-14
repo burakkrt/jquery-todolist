@@ -13,8 +13,14 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-<div class="container d-flex justify-content-center align-items-center" style="height: 100vh">
-  <table class="table w-75 table-dark table-striped m-0 shadow">
+<div class="container d-flex flex-column justify-content-center align-items-center row-gap-4" style="height: 100vh">
+  <form class="w-75" id="enterTodo">
+    <input type="text" id="newTodoValue"
+           class="form-control w-100 bg-opacity-25 bg-primary-subtle shadow-lg rounded-1 border border-2 border-dark-subtle"
+           placeholder="Enter new todo...">
+  </form>
+
+  <table class="table w-75 table-dark table-striped table-hover m-0 shadow">
     <thead>
     <tr>
       <th scope="col">ID</th>
@@ -23,15 +29,39 @@
       <th scope="col">Events</th>
     </tr>
     </thead>
-    <tbody class="todo-content">
-    <tr>
+    <tbody id="todoContent">
+    <tr id="1">
       <th scope="row">1</th>
-      <td>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</td>
-      <td class="date">28.05.2023</td>
+      <td class="todoDesc">Check your e-mails for overseas projects.</td>
+      <td class="date">01.07.2023</td>
       <td>
         <div class="events">
-          <button class="btn rounded-pill btn-danger"><i class="fa-solid fa-trash"></i></button>
-          <button class="btn rounded-pill btn-success"><i class="fa-solid fa-square-check"></i>
+          <button class="btn rounded-pill btn-danger" onclick="removeTodo(1)"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn rounded-pill btn-success" onclick="passiveTodo(1)"><i class="fa-solid fa-square-check"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+    <tr id="2">
+      <th scope="row">2</th>
+      <td class="todoDesc">Check the shipping status of my newly purchased products.</td>
+      <td class="date">04.07.2023</td>
+      <td>
+        <div class="events">
+          <button class="btn rounded-pill btn-danger" onclick="removeTodo(2)"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn rounded-pill btn-success" onclick="passiveTodo(2)"><i class="fa-solid fa-square-check"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+    <tr id="3" class="passive">
+      <th scope="row">3</th>
+      <td class="todoDesc">You have mastered the basics of jquery, make a todo application.</td>
+      <td class="date">13.07.2023</td>
+      <td>
+        <div class="events">
+          <button class="btn rounded-pill btn-danger" onclick="removeTodo(3)"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn rounded-pill btn-success" onclick="passiveTodo(3)"><i class="fa-solid fa-square-check"></i>
           </button>
         </div>
       </td>
